@@ -1,0 +1,13 @@
+.video-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap:1rem;  
+    justify-content: space-evenly;
+}
+
+#videocard{
+    width:20%;
+    height:20%;
+}
+
+ 

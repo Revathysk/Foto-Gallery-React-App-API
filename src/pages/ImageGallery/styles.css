@@ -1,0 +1,21 @@
+.image-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    background-color: rgb(235, 236, 238);
+    justify-content: space-evenly;
+}
+
+.imagecard{
+  width: 20vw;
+}
+
+/* 
+.imagecard:hover{
+  width:50vw;
+  height:70vh;
+  position:absolute;  
+  z-index:1;
+} */
+ 
+ 
