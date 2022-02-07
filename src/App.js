@@ -37,7 +37,7 @@ function App() {
 
   const fetchURL = async () => {
 
-    console.log('inside fetch', userInput)
+    // console.log('inside fetch', userInput)
     try {
       const imageResponse = await axios.get(imageGalleryURL)
       setImageData(imageResponse.data)
@@ -54,7 +54,7 @@ function App() {
 
   useEffect(() => {
     fetchURL()
-  }, [])
+  }, [userInput])
 
   return (
     <div className="App">

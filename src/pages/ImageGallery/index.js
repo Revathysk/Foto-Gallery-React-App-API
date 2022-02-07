@@ -17,7 +17,7 @@ const ImageGallery = ({ imgData, userInput, addToFavorites }) => {
         console.log(error)
         }
 
-    }, [itemOffset, userInput]); // ItemOffset or UserInput -> indicates Axios call to be done only when page number or user input changingis changing/new page clicked
+    }, [itemOffset , userInput]); // ItemOffset or UserInput -> indicates Axios call to be done only when page number or user input changingis changing/new page clicked
 
 
 
