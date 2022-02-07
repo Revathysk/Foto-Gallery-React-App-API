@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom';
 import './styles.css';
-// import { useContext } from 'react';
-// import UserContext from '../../context/Usercontext';
+import { useContext } from 'react';
+import UserContext from '../../context/Usercontext';
  
 const Navigatepage = ({handleInput, fetchURL , userLogin}) => {
-//    const user = useContext(UserContext);  
-//    console.log(user)
+   const user = useContext(UserContext);  
+    
    return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid" >
@@ -21,9 +21,15 @@ const Navigatepage = ({handleInput, fetchURL , userLogin}) => {
                             <li className="nav-item">
                                 <Link className="nav-link" to="videos" > Videos</Link>
                             </li>
+                                                        
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="login">Login</Link>
-                            </li>                          
+                            <Link className="nav-link" to="login">Login</Link> 
+                              </li>  
+                             
+                             {!user? null:
+                            <li className="nav-item">
+                                <Link className="nav-link" to="favorites"> Favorites </Link>
+                            </li>  }
                         </ul>                        
                     </div>
                     

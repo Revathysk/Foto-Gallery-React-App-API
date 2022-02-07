@@ -1,6 +1,7 @@
 import './styles.css'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './styles.css'
 
 
 const Login = ({ setUserLogin }) => {
@@ -10,8 +11,7 @@ const Login = ({ setUserLogin }) => {
     const handleChange = e => { setUserName(e.target.value) }
     const handleSubmit = e => {
         e.preventDefault()
-        setUserLogin(userName)
-
+        setUserLogin(userName)        
         navigate('/photos')
     }
 
