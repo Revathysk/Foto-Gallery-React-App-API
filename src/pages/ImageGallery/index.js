@@ -55,7 +55,7 @@ const ImageGallery = ({ imgData, userInput, addToFavorites }) => {
                                     <h6 className="card-title"> Tag: {image.tags[0].toUpperCase() + image.tags.slice(1)}</h6>
                                     <h6 className="card-title fst-italic"> Shared by: {image.user}</h6>
 
-                                    {/* <i onClick={() => console.log('clicked')} className="bi bi-star" > Add to Favorite </i> */}
+                                    <i onClick={() => console.log('clicked')} className="bi bi-star" > </i>
                                     <i id= 'icon' className="bi bi-star-full" > 
                                         <button onClick={ ()=> {addToFavorites(image) }}> Add to Favorite </button>  
                                     </i>
