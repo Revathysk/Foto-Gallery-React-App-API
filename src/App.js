@@ -41,10 +41,10 @@ function App() {
     try {
       const imageResponse = await axios.get(imageGalleryURL)
       setImageData(imageResponse.data)
-      console.log(imgData)
+      // console.log(imgData)
       const videoResponse = await axios.get(videoGalleryURL)
       setVideoData(videoResponse.data)
-      console.log(videoData)
+      // console.log(videoData)
       
     }
     catch (error) {
@@ -52,9 +52,9 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    fetchURL()
-  }, [userInput])
+  // useEffect(() => {
+  //   fetchURL()
+  // },[])
 
   return (
     <div className="App">
