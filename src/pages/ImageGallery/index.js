@@ -57,7 +57,7 @@ const ImageGallery = ({ imgData, userInput, addToFavorites }) => {
 
                                     <i onClick={() => console.log('clicked')} className="bi bi-star" > </i>
                                     <i id= 'icon' className="bi bi-star-full" > 
-                                        <button onClick={ ()=> {addToFavorites(image) }}> Add to Favorite </button>  
+                                        <button id='button' onClick={ ()=> {addToFavorites(image) }}> Add to Favorite </button>  
                                     </i>
 
                                 </div>

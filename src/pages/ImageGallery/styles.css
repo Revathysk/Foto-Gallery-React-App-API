@@ -10,6 +10,10 @@
 .imagecard{
   width: 20vw;
 }
+
+#button:hover{
+  box-shadow: 0px 0px 5px 5px lightgoldenrodyellow;
+}
  
 /* .imagecard:hover{
   width :50vw;
