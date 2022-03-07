@@ -1,21 +1,27 @@
+ body{
+     background-color: rgb(1, 14, 14);  
+ }
+.user-main-div{
+    display:flex;  
+    margin:2cm;
+    padding: 1cm;
+    background-color: #bbb;
+    height:80vh;
+} 
  
-
- #login-form
+ #login-form1,#login-form2 
   { 
-      display:flex;
-      flex-wrap: wrap;
+      display:flex;     
       flex-direction: column;      
       align-content: center;
       justify-content: center;
-      width:80vw; 
-      height:80vh;
-      border-style:outset;       
-      background-color: rgba(61, 147, 218, 0.486); 
- }  
+      text-align: left;
+   }  
 
- #login-div{      
-     width:50vw;
-     height:50vh;
-     border: solid black;
-     
+ .line{
+    margin-top: 2cm;
+    border-left: 3px solid rgb(121, 116, 116);    
+    height: 60vh;   
  }
+
+ 

@@ -1,3 +1,6 @@
+.nav-bgcolor{
+    background-color: #bbb;
+}
 .searchbar{
     display:flex;    
 }

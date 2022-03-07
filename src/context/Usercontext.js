@@ -1,6 +1,6 @@
 import {createContext} from 'react';
 
-const user= 'Viewer';
-const UserContext = createContext(user) 
+const user =  'Viewers';
+const UserContext = createContext(user);
 
 export default UserContext;

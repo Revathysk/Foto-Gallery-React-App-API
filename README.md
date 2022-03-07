@@ -13,8 +13,10 @@ Each image card has Add to favorite button & star icon to mark the favorite imag
 
 Login page - create an account by choosing username & password and will allow to save the favorites.
 
-2/5/2022 - Pagination and favorite page development in progress
+Pagination added to go thru the 500 image fetch limit for each query
 
-2/7/2022- Included logic for pagination and favorite page
+wireframe - https://www.figma.com/file/e03VDYlhbm2rWr9ZcKdVp5/Untitled?node-id=0%3A1
+
+ 
 
 

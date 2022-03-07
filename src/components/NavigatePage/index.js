@@ -2,12 +2,13 @@ import {Link} from 'react-router-dom';
 import './styles.css';
 import { useContext } from 'react';
 import UserContext from '../../context/Usercontext';
+
  
-const Navigatepage = ({handleInput, fetchURL , userLogin}) => {
-   const user = useContext(UserContext);  
+const Navigatepage = ({handleInput, fetchURL}) => {   
     
-   return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    const user=useContext(UserContext);
+    return (
+            <nav className="navbar navbar-expand-lg navbar-light nav-bgcolor">
                 <div className="container-fluid" >
                     <Link className="navbar-brand" to="/">Foto Gallery</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +35,7 @@ const Navigatepage = ({handleInput, fetchURL , userLogin}) => {
                     </div>
                     
                     <div className='searchbar'>                        
-                        <div id='viewer'> <h6> Hi {userLogin} </h6>  </div>
+                        <div id='viewer'> <h6> Hi {user} </h6>  </div>
                         <input className="form-control me-2" type="search" placeholder= "search..." onChange={handleInput}/>
                         <button className="btn btn-outline-success" onClick={fetchURL}> Search </button>
 

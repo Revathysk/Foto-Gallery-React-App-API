@@ -1,11 +1,10 @@
-import { useContext,  useState } from 'react'
+import { useContext, useState } from 'react'
 import axios from 'axios'
 import { Routes, Route } from 'react-router-dom'
 
 
 //context component
 import UserContext from './context/Usercontext';
-
 import './App.css';
 import FotoGallery from './pages/FotoGallery';
 import ImageGallery from './pages/ImageGallery';
@@ -15,18 +14,40 @@ import LogIn from './pages/Login';
 import Navigatepage from './components/NavigatePage';
 
 function App() {
-  const user = useContext(UserContext);  
-  const [userLogin,setUserLogin] = useState(user)
+  const [user, setUser] = useState('Viewer')
+  const [userLogin, setUserLogin] = useState('');
   const [imgData, setImageData] = useState('')
-  const [userInput, setUserInput] = useState('')
-  const [videoData, setVideoData] = useState('')   
-  const [favorites,setFavorites]= useState([])
+  const [userInput, setUserInput] = useState('Nature')
+  const [videoData, setVideoData] = useState('')
+  // const [favorites,setFavorites] = useState([])
 
-  const addToFavorites = (images) => {
-    console.log('Liked')
-    setFavorites([...favorites,images])
-  }
+  // Add new favorite of user to POSTGRES table Favorite - Create functionality
+  const addToFavorites = async (image) => {
 
+    if (userLogin) {
+      //console.log('Liked by :', userLogin);
+      //console.log('Liked by :', image.webformatURL);
+      const favorites = {
+        username: userLogin,
+        fotourl: image.webformatURL,
+        fototag: image.tags,
+        sharedby: image.user
+      }
+      try {
+        //console.log("Add fav: ", image.tags )
+        const response = await axios.post('http://localhost:8080/api/v1/user/favorites/add/', favorites)
+        //console.log(response.data)
+      }
+      catch (error) {
+        console.log(error)
+        alert("Favorite not saved due to server error. Try again later ")
+      }
+    }
+    else {
+      alert("Please signup/login to save your favorites")
+    }
+  }    // addFavorites
+ 
   const imageGalleryURL = `https://pixabay.com/api/?key=25458026-1cedfff5e31c1c4038fe36056&q=${userInput}&image_type=photo&pretty=true`
   const videoGalleryURL = `https://pixabay.com/api/videos/?key=25458026-1cedfff5e31c1c4038fe36056&q=${userInput}`
 
@@ -37,7 +58,6 @@ function App() {
 
   const fetchURL = async () => {
 
-    // console.log('inside fetch', userInput)
     try {
       const imageResponse = await axios.get(imageGalleryURL)
       setImageData(imageResponse.data)
@@ -45,7 +65,7 @@ function App() {
       const videoResponse = await axios.get(videoGalleryURL)
       setVideoData(videoResponse.data)
       // console.log(videoData)
-      
+
     }
     catch (error) {
       console.log(error)
@@ -59,14 +79,14 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={user}>
-         
-        <Navigatepage handleInput={handleInput} fetchURL={fetchURL} userLogin={userLogin}/>
+
+        <Navigatepage handleInput={handleInput} fetchURL={fetchURL} />
         <Routes>
-          <Route path='/' element={<FotoGallery/>} />
+          <Route path='/' element={<FotoGallery />} />
           <Route path='/photos' element={<ImageGallery imgData={imgData} userInput={userInput} addToFavorites={addToFavorites} />} />
           <Route path='/videos' element={<VideoGallery videoData={videoData} />} />
-          <Route path='/login' element={<LogIn setUserLogin={setUserLogin} />} />
-          <Route path='/favorites' element={<Favorites favorites={favorites} />}/>
+          <Route path='/login' element={<LogIn setUser={setUser} setUserLogin={setUserLogin} />} />
+          <Route path='/favorites' element={<Favorites userLogin={userLogin} />} />
         </Routes>
       </UserContext.Provider>
     </div>
