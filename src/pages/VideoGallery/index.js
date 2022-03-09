@@ -3,8 +3,9 @@ import './styles.css'
 
 
 const VideoGallery = ({videoData}) => {  
- 
+    console.log ("in video",videoData)
     return (
+        
         <div className= 'video-container'>
              {videoData &&
                 videoData.hits.map((video,i) =>
@@ -20,6 +21,7 @@ const VideoGallery = ({videoData}) => {
                 )}
         </div>
     );
+    
 }
 
 export default VideoGallery;

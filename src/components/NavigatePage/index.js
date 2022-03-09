@@ -25,12 +25,11 @@ const Navigatepage = ({handleInput, fetchURL}) => {
                                                         
                             <li className="nav-item">
                             <Link className="nav-link" to="login">Login</Link> 
-                              </li>  
-                             
-                             {!user? null:
+                            </li>                          
+                          
                             <li className="nav-item">
                                 <Link className="nav-link" to="favorites"> Favorites </Link>
-                            </li>  }
+                            </li>  
                         </ul>                        
                     </div>
                     

@@ -1,4 +1,38 @@
-.edit-delete {
+.favorite-page{
+    margin-top: 1cm;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;     
+}
+
+.message-div{
+    display:flex;
+    flex-direction: column;    
+    justify-content: center;
+    color:whitesmoke;    
+    height:100vh;
+}
+
+.foto-div{
+    display:flex;
+    flex-wrap:wrap;
+    gap:3rem;
+    background-color: rgb(1, 14, 14);  
+    justify-content: space-evenly;
+}
+
+.edit-delete-icons{
     display: flex;
     justify-content: space-between;
+}
+
+.edit-div{
+    display:flex;
+    flex-direction:row;
+    width:100vw;
+    justify-content: center; 
+}
+
+.tag-label{
+    color:white;
 }

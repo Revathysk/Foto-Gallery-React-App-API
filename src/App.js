@@ -1,4 +1,5 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
+// import {useContext,useEffect} from 'react';
 import axios from 'axios'
 import { Routes, Route } from 'react-router-dom'
 
@@ -14,27 +15,26 @@ import LogIn from './pages/Login';
 import Navigatepage from './components/NavigatePage';
 
 function App() {
-  const [user, setUser] = useState('Viewer')
+  const [user, setUser] = useState('Viewers')
   const [userLogin, setUserLogin] = useState('');
   const [imgData, setImageData] = useState('')
   const [userInput, setUserInput] = useState('Nature')
   const [videoData, setVideoData] = useState('')
-  // const [favorites,setFavorites] = useState([])
+  
 
   // Add new favorite of user to POSTGRES table Favorite - Create functionality
   const addToFavorites = async (image) => {
 
     if (userLogin) {
-      //console.log('Liked by :', userLogin);
-      //console.log('Liked by :', image.webformatURL);
+       
       const favorites = {
         username: userLogin,
         fotourl: image.webformatURL,
         fototag: image.tags,
         sharedby: image.user
       }
-      try {
-        //console.log("Add fav: ", image.tags )
+
+      try {        
         const response = await axios.post('http://localhost:8080/api/v1/user/favorites/add/', favorites)
         //console.log(response.data)
       }
@@ -62,10 +62,10 @@ function App() {
       const imageResponse = await axios.get(imageGalleryURL)
       setImageData(imageResponse.data)
       // console.log(imgData)
+
       const videoResponse = await axios.get(videoGalleryURL)
       setVideoData(videoResponse.data)
-      // console.log(videoData)
-
+      // console.log(videoData)    
     }
     catch (error) {
       console.log(error)

@@ -1,6 +1,7 @@
  
 .image-container{
-     display:flex;
+    margin-top: 1cm;
+    display:flex;
     flex-wrap:wrap;
     gap:3rem;
     background-color: rgb(1, 14, 14);  
