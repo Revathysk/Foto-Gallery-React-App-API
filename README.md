@@ -1,6 +1,8 @@
 
 Deployment Link - https://priceless-pasteur-98dd80.netlify.app/
 
+Figma WireFrame - https://www.figma.com/file/e03VDYlhbm2rWr9ZcKdVp5/Foto-gallery?node-id=30%3A222
+
 Foto Gallery is created as part of React APP API fetch and rendering practice.
 
 PIXABAY is image and video gallery for stunning free stocks. Link for the API docuemntation -https://pixabay.com/api/docs/
